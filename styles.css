@@ -1706,8 +1706,57 @@ body {
     }
 
     .category-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 2rem;
+        padding: 1rem 0;
+        margin: 0 -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+
+    .category-grid::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .category-grid::-webkit-scrollbar-thumb {
+        background: var(--primary-color);
+        border-radius: 3px;
+    }
+
+    .category-grid > * {
+        flex: 0 0 250px;
+        scroll-snap-align: start;
+    }
+
+    .category-card {
+        padding: 2.5rem 2rem;
+        gap: 1.4rem;
+        height: auto;
+    }
+
+    .category-card i {
+        width: 68px;
+        height: 68px;
+        font-size: 2rem;
+    }
+
+    .category-card__content h3 {
+        font-size: 1.35rem;
+    }
+
+    .category-card__content p {
+        font-size: 0.95rem;
+    }
+
+    .category-cta {
+        padding: 0.75rem 1.6rem;
+        font-size: 0.9rem;
     }
 
     .filter-buttons {
