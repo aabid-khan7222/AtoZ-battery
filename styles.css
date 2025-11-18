@@ -2053,7 +2053,8 @@ body {
     .testimonials-slider {
         overflow-x: auto;
         padding-bottom: 0.75rem;
-        padding-left: 0.5rem;
+        padding-left: 0;
+        scroll-snap-type: x mandatory;
     }
 
     .testimonials-track {
@@ -2061,8 +2062,24 @@ body {
     }
 
     .testimonial-card {
-        min-width: clamp(260px, 75vw, 320px);
+        min-width: min(320px, 88vw);
+        max-width: min(320px, 88vw);
+        height: min(360px, 88vw);
         flex: 0 0 auto;
+        padding: 1.4rem;
+        gap: 1rem;
+        justify-content: space-between;
+        scroll-snap-align: center;
+    }
+
+    .testimonial-text {
+        font-size: 0.9rem;
+        line-height: 1.45;
+        line-clamp: 6;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
 
@@ -2311,7 +2328,17 @@ body {
     }
 
     .testimonial-card {
-        min-width: clamp(240px, 78vw, 300px);
+        min-width: min(280px, 90vw);
+        max-width: min(280px, 90vw);
+        height: min(320px, 90vw);
+        padding: 1.2rem;
+        scroll-snap-align: center;
+    }
+
+    .testimonial-text {
+        font-size: 0.85rem;
+        line-clamp: 7;
+        -webkit-line-clamp: 7;
     }
 
 
