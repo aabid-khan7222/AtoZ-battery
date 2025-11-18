@@ -2053,8 +2053,30 @@ body {
     .testimonials-slider {
         overflow-x: auto;
         padding-bottom: 0.75rem;
-        padding-left: 0;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
         scroll-snap-type: x mandatory;
+    }
+
+    .testimonials-carousel {
+        position: relative;
+        padding: 0 1rem;
+    }
+
+    .testimonial-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .testimonial-nav--prev {
+        left: 0.25rem;
+    }
+
+    .testimonial-nav--next {
+        right: 0.25rem;
     }
 
     .testimonials-track {
@@ -2324,7 +2346,8 @@ body {
     }
 
     .testimonials-slider {
-        padding-left: 0;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 
     .testimonial-card {
