@@ -159,3 +159,23 @@
     font-size: 1.2rem;
 }
 
+@media (max-width: 600px) {
+    .shop-modal__dialog {
+        margin: 40px auto;
+    }
+
+    .shop-modal__header,
+    .shop-modal__body {
+        padding: 24px;
+    }
+
+    .shop-form__footer {
+        flex-direction: column;
+    }
+
+    .shop-form__submit,
+    .shop-form__cancel {
+        width: 100%;
+    }
+}
+
