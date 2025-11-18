@@ -2053,8 +2053,8 @@ body {
     .testimonials-slider {
         overflow-x: auto;
         padding-bottom: 0.75rem;
-        padding-left: 0.15rem;
-        padding-right: 0.15rem;
+        padding-left: 2.15rem;
+        padding-right: 2.15rem;
         scroll-snap-type: x mandatory;
     }
 
