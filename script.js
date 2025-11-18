@@ -1183,6 +1183,14 @@ function initializeBookingForm() {
         }
     });
 
+    const heroBookingBtn = document.querySelector('.hero-primary-cta');
+    if (heroBookingBtn) {
+        heroBookingBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            openBookingModal();
+        });
+    }
+
     if (bookingCancelBtn) {
         bookingCancelBtn.addEventListener('click', closeBookingModal);
     }
