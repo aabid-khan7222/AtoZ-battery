@@ -2053,8 +2053,8 @@ body {
     .testimonials-slider {
         overflow-x: auto;
         padding-bottom: 0.75rem;
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
         scroll-snap-type: x mandatory;
     }
 
@@ -2346,8 +2346,8 @@ body {
     }
 
     .testimonials-slider {
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-left: 2.8rem;
+        padding-right: 2.8rem;
     }
 
     .testimonial-card {
