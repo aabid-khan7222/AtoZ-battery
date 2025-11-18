@@ -175,6 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeShopLinks();
     initializeShopForm();
     initializeBookingForm();
+    initializeTestimonialsSlider();
 });
 
 // Utility: compute selling price as mrp - 400 (min 0) for automotive
@@ -917,6 +918,53 @@ function initializeShopForm() {
             }
         });
     }
+}
+
+function initializeTestimonialsSlider() {
+    const slider = document.getElementById('testimonialsSlider');
+    if (!slider) return;
+
+    const prevBtn = document.querySelector('.testimonial-nav--prev');
+    const nextBtn = document.querySelector('.testimonial-nav--next');
+
+    const scrollByAmount = () => Math.max(slider.clientWidth * 0.8, 280);
+
+    const updateNavState = () => {
+        if (!prevBtn || !nextBtn) return;
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+        prevBtn.disabled = slider.scrollLeft <= 12;
+        nextBtn.disabled = slider.scrollLeft >= maxScroll - 12;
+    };
+
+    const handleNavClick = (direction) => {
+        slider.scrollBy({
+            left: direction * scrollByAmount(),
+            behavior: 'smooth'
+        });
+    };
+
+    slider.addEventListener('scroll', () => {
+        window.requestAnimationFrame(updateNavState);
+    });
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => handleNavClick(-1));
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => handleNavClick(1));
+    }
+
+    slider.addEventListener('wheel', (event) => {
+        if (Math.abs(event.deltaX) < Math.abs(event.deltaY)) return;
+        event.preventDefault();
+        slider.scrollBy({
+            left: event.deltaX,
+            behavior: 'auto'
+        });
+    }, { passive: false });
+
+    updateNavState();
+    window.addEventListener('resize', updateNavState);
 }
 
 function openShopModal() {
